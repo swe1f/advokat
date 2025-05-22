@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App">
       <Helmet>
-        <title>Мой сайт</title>
+        <title>Asiya Imanbaeva</title>
         <meta name="description" content="Описание сайта для Google" />
       </Helmet>
 

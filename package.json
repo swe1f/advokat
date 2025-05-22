@@ -1,7 +1,7 @@
 {
   "name": "asiya.advokat",
   "version": "0.1.0",
-  "homepage": "https://swe1f.github.io/advokat",
+  "homepage": "/",
   "private": true,
   "dependencies": {
     "@testing-library/dom": "^10.4.0",

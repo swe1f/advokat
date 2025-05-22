@@ -1,0 +1,326 @@
+:root {
+  --primary-dark: #1a2a3a;       /* Основной темный цвет */
+  --secondary-accent: #52504f;   /* Теплый коричневый акцент */
+  --light-text: #ffffff;         /* Белый текст */
+  --dark-text: #1a2a3a;          /* Темный текст */
+  --header-transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --chetire-accent: white;
+    --font-main: 'Open Sans', sans-serif;
+  --font-heading: 'PT Serif', serif;
+}
+
+
+.header {
+    font-family: var(--font-main);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 94%;
+  padding: 25px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent;
+  z-index: 1000;
+  transition: var(--header-transition);
+  backdrop-filter: blur(0px);
+  
+  
+}
+
+/* Стили при скролле */
+.header.scrolled {
+  background-color: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 15px 5%;
+  backdrop-filter: blur(8px);
+}
+
+/* Логотип */
+.logo-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+    font-family: var(--font-heading);
+  color: var(--light-text);
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  transition: var(--header-transition);
+}
+
+.header.scrolled .logo {
+  color: var(--dark-text);
+  text-shadow: none;
+}
+
+.profession {
+  color: var(--chetire-accent);
+  font-size: 0.8rem;
+  margin-top: 4px;
+  font-weight: 400;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  transition: var(--header-transition);
+}
+.header.scrolled .profession {
+  color: var(--dark-text);
+  text-shadow: none;
+}
+/* Навигация */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-link {
+  color: var(--light-text);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 8px 0;
+  position: relative;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  transition: color 0.3s ease;
+}
+
+.header.scrolled .nav-link {
+  color: var(--dark-text);
+  text-shadow: none;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--secondary-accent);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Кнопка телефона */
+.nav-phone {
+  color: var(--light-text);
+  background-color: rgba(126, 126, 126, 0.401);
+  border: 1px solid var(--secondary-accent);
+  padding: 8px 20px;
+  border-radius: 4px;
+  margin-left: 25px;
+  font-weight: 500;
+  transition: var(--header-transition);
+  backdrop-filter: blur(4px);
+}
+
+.header.scrolled .nav-phone {
+  background-color: var(--secondary-accent);
+  color: white;
+  border: 1px solid var(--secondary-accent);
+}
+
+/* Мобильное меню */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1001;
+}
+
+.hamburger span {
+  display: block;
+  width: 28px;
+  height: 2px;
+  background-color: var(--light-text);
+  margin: 6px 0;
+  transition: var(--header-transition);
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 992px) {
+  .nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.98);
+    flex-direction: column;
+    justify-content: center;
+    gap: 25px;
+    transition: right 0.4s ease;
+    padding: 30px;
+    backdrop-filter: blur(10px);
+    border-left: 1px solid rgba(139, 90, 43, 0.2);
+  }
+  
+  .nav.open {
+    right: 0;
+  }
+  
+  .nav-link {
+    color: var(--dark-text);
+  }
+  
+  .hamburger {
+    display: block;
+  }
+  
+  .hamburger.open span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+  }
+  
+  .hamburger.open span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .hamburger.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+  
+  .nav-phone {
+    margin-left: 0;
+    margin-top: 20px;
+  }
+}
+/* ... предыдущие стили остаются такими же ... */
+
+/* Стили для модального окна */
+.contacts-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+}
+
+.modal-content {
+  background: white;
+  padding: 40px;
+  border-radius: 16px;
+  position: relative;
+  z-index: 2001;
+  max-width: 450px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  animation: modalFadeIn 0.4s ease-out;
+}
+
+.modal-header {
+  margin-bottom: 30px;
+}
+
+.modal-header h3 {
+  font-size: 1.8rem;
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+.modal-header p {
+  color: var(--gray);
+  font-size: 1rem;
+}
+
+.close-modal {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--gray);
+  transition: color 0.3s;
+}
+
+.close-modal:hover {
+  color: var(--primary);
+}
+
+.contact-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.contact-btn {
+  padding: 15px 25px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.contact-btn i {
+  font-size: 1.2rem;
+}
+
+.whatsapp {
+  background: linear-gradient(135deg, #25D366, #128C7E);
+}
+
+.phone {
+  background: linear-gradient(135deg, #4285F4, #34A853);
+}
+
+.email {
+  background: linear-gradient(135deg, #EA4335, #FBBC05);
+}
+
+.contact-info {
+  border-top: 1px solid #eee;
+  padding-top: 20px;
+}
+
+.contact-info p {
+  color: var(--gray);
+  font-size: 0.9rem;
+  margin: 8px 0;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

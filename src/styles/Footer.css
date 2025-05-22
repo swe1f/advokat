@@ -1,0 +1,133 @@
+:root {
+  --primary-dark: #4f5458;
+  --secondary-accent: #ffffff;
+  --light-text: #ffffff;
+  --font-main: 'Open Sans', sans-serif;
+  --font-heading: 'PT Serif', serif;
+}
+
+.footer {
+  background-color: rgb(49, 49, 49);
+  color: var(--light-text);
+  padding: 80px 0 30px;
+  font-family: var(--font-main);
+}
+
+.footer::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, var(--secondary-accent), rgba(139, 90, 43, 0.5));
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.footer-column {
+  position: relative;
+}
+
+.footer-title {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  margin-bottom: 25px;
+  position: relative;
+  padding-bottom: 10px;
+  font-weight: 600;
+}
+
+.footer-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background-color: var(--secondary-accent);
+}
+
+.footer-text {
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 20px;
+  font-size: 0.95rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.contact-icon {
+  margin-right: 10px;
+  color: var(--secondary-accent);
+  font-size: 1.1rem;
+}
+
+.contact-link {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.contact-link:hover {
+  color: var(--secondary-accent);
+}
+
+.whatsapp-button {
+  display: inline-flex;
+  align-items: center;
+  background-color: rgba(93, 93, 93, 0.545);
+  color: rgb(0, 255, 85);
+  padding: 12px 20px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.whatsapp-button:hover {
+  background-color: rgba(0, 255, 85, 0.314);
+  transform: translateY(-2px);
+}
+
+.whatsapp-icon {
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(173, 154, 154, 0.1);
+  padding-top: 30px;
+  margin-top: 60px;
+}
+
+.copyright {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.85rem;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 60px 0 20px;
+  }
+  
+  .footer-grid {
+    gap: 30px;
+  }
+}

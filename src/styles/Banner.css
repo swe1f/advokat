@@ -1,0 +1,653 @@
+/* Обновленный Banner.css с улучшенным дизайном */
+:root {
+  --primary: #1a2a3a;
+  --secondary: #c75c2b;
+  --secondary-light: #e67a4a;
+  --dark: #333;
+  --light: #f8f9fa;
+  --gray: #6c757d;
+  --font-main: 'Open Sans', sans-serif;
+  --font-heading: 'PT Serif', serif;
+  --gradient-primary: linear-gradient(135deg, #1a2a3a 0%, #2a3a4a 100%);
+  --gradient-secondary: linear-gradient(135deg, #c75c2b 0%, #e67a4a 100%);
+}
+
+.banner-container {
+  position: relative;
+  margin-top: 0;
+}
+
+/* Улучшенный баннер с параллакс-эффектом */
+.banner {
+  background-image: linear-gradient(rgba(10, 20, 30, 0), rgba(10, 20, 30, 0.85)),
+    url('https://images.myguide-cdn.com/kazakhstan/companies/astana-night-city-private-tour-with-local-guide-puckup/large/astana-night-city-private-tour-with-local-guide-puckup-4387872.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  height: 108vh;
+  min-height: 800px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+    position: relative;
+}
+
+.banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(ellipse at center, rgba(26, 42, 58, 0.4) 0%, rgba(26, 42, 58, 0.9) 100%);
+  z-index: 1;
+}
+
+.banner::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 150px;
+  background: linear-gradient(to bottom, transparent, white);
+  z-index: 2;
+}
+
+.banner-content {
+  max-width: 900px;
+  padding: 20px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 3;
+  background-color: rgba(255, 255, 255, 0.042);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+  animation: fadeInUp 1s ease-out;
+  transition: all 0.5s ease;
+}
+
+
+
+.banner h1 {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  margin-bottom: -10px;
+  line-height: 1.3;
+  font-weight: 700;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+  letter-spacing: -0.5px;
+}
+
+.subtitle {
+  font-family: var(--font-main);
+  font-size: 1.4rem;
+  margin-bottom: 40px;
+  opacity: 0.9;
+  line-height: 1.7;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+  font-weight: 400;
+}
+
+.banner-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.btn-primary, .btn-secondary {
+  padding: 18px 50px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+  overflow: hidden;
+  border: none;
+  outline: none;
+}
+
+.btn-primary {
+  background: var(--gradient-secondary);
+  color: #fff;
+  font-weight: 700;
+  border-radius: 10px;
+  padding: 18px 45px;
+  box-shadow: 0 6px 25px rgba(211, 71, 37, 0.5);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #b1321a, #d34725);
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 12px 30px rgba(199, 92, 43, 0.8);
+}
+
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: 0.6s;
+}
+
+.btn-primary:hover::after {
+  left: 100%;
+}
+
+.btn-secondary {
+  border: 2px solid #fff;
+  background-color: transparent;
+  color: #fff;
+  padding: 18px 45px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
+}
+
+/* Улучшенная секция счетчиков */
+.counters-section {
+  background-color: white;
+  padding: 120px 0;
+  position: relative;
+  z-index: 3;
+
+  margin-top: -60px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 50px;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.stat-item {
+  padding: 40px 30px;
+  transition: all 0.4s ease;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: var(--gradient-secondary);
+}
+
+
+
+.stat-value {
+  font-size: 4rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 15px;
+  position: relative;
+  display: inline-block;
+  font-family: var(--font-heading);
+}
+
+.stat-value::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70px;
+  height: 4px;
+  background: var(--secondary);
+  border-radius: 2px;
+}
+
+.stat-label {
+  font-family: var(--font-main);
+  font-size: 1.4rem;
+  color: var(--gray);
+  margin-top: 25px;
+  font-weight: 600;
+}
+
+/* Улучшенная секция услуг */
+.services-section {
+  padding: 120px 0 150px;
+  background-color: var(--light);
+  position: relative;
+
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 90px;
+}
+
+
+.services-title {
+  font-family: var(--font-heading);
+  font-size: 4rem;
+  color: var(--primary);
+  position: relative;
+  display: inline-block;
+  margin-bottom: 25px;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+}
+.services-title::after {
+  content: '';
+  display: block;
+  width: 150px;
+  height: 6px;
+  background: var(--gradient-secondary);
+  margin: 30px auto 0;
+  border-radius: 3px;
+  transition: width 0.4s ease;
+}
+.section-header:hover .services-title::after {
+  width: 180px;
+}
+
+
+.services-subtitle {
+  font-family: var(--font-accent);
+  font-size: 1.6rem;
+  color: var(--gray);
+  max-width: 850px;
+  margin: 0 auto;
+  line-height: 1.8;
+  font-weight: 400;
+}
+
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.service-card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeInUp 0.8s ease-out forwards;
+  position: relative;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+.service-card:hover {
+  transform: translateY(-20px) scale(1.03);
+  box-shadow: 0 35px 80px rgba(0, 0, 0, 0.15);
+}
+
+
+.service-card:hover {
+  transform: translateY(-15px) scale(1.02);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.2);
+}
+
+.service-icon {
+  padding: 35px;
+  text-align: center;
+  font-size: 4rem;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.6s ease;
+}
+
+.service-card:hover .service-icon {
+  transform: scale(1.1);
+}
+
+
+.service-icon::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--gradient-primary);
+  opacity: 0.95;
+  z-index: -1;
+}
+
+.service-icon::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 60%);
+  transform: rotate(30deg);
+  z-index: -1;
+  transition: all 0.6s ease;
+}
+.service-card:hover .service-icon::after {
+  transform: rotate(30deg) translate(20%, 20%);
+}
+
+.service-content {
+  padding: 30px 25px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.service-card h3 {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: var(--primary);
+  line-height: 1.3;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: -0.5px;
+}
+
+.service-features {
+  margin: 0 0 40px;
+  padding: 0;
+  list-style: none;
+  flex-grow: 1;
+  width: 100%;
+}
+
+.service-features li {
+  position: relative;
+  padding-left: 45px;
+  margin-bottom: 22px;
+  font-size: 1.2rem;
+  color: #555;
+  line-height: 1.7;
+  display: flex;
+  align-items: center;
+  font-family: var(--font-main);
+}
+
+.service-features li i {
+  position: absolute;
+  left: 0;
+  color: var(--secondary);
+  font-size: 1.6rem;
+  transition: transform 0.3s ease;
+}
+.service-features li:hover i {
+  transform: scale(1.2);
+}
+
+.service-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  background: var(--gradient-secondary);
+  color: white;
+  padding: 20px 45px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.4s cubic-bezier(0.33, 1, 0.68, 1);
+  margin-top: auto;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  box-shadow: 0 8px 25px rgba(214, 104, 54, 0.4);
+  width: 100%;
+  max-width: 320px;
+  text-align: center;
+  font-family: var(--font-main);
+  letter-spacing: 0.5px;
+}
+.service-btn:hover {
+  background: linear-gradient(135deg, #c55a2a, #e07648);
+  transform: translateY(-6px);
+  box-shadow: 0 15px 40px rgba(214, 104, 54, 0.6);
+}
+
+
+/* Анимации */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.service-card:nth-child(1) { animation-delay: 0.1s; }
+.service-card:nth-child(2) { animation-delay: 0.2s; }
+.service-card:nth-child(3) { animation-delay: 0.3s; }
+.service-card:nth-child(4) { animation-delay: 0.4s; }
+.service-card:nth-child(5) { animation-delay: 0.5s; }
+.service-card:nth-child(6) { animation-delay: 0.6s; }
+
+/* Обновленный Banner.css с улучшенным дизайном */
+:root {
+  --primary: #1a2a3a;
+  --secondary: #c75c2b;
+  --secondary-light: #e67a4a;
+  --dark: #333;
+  --light: #f8f9fa;
+  --gray: #6c757d;
+  --font-main: 'Open Sans', sans-serif;
+  --font-heading: 'PT Serif', serif;
+  --gradient-primary: linear-gradient(135deg, #1a2a3a 0%, #2a3a4a 100%);
+  --gradient-secondary: linear-gradient(135deg, #c75c2b 0%, #e67a4a 100%);
+}
+
+/* ... весь предыдущий CSS код остается без изменений ... */
+
+/* Адаптивность */
+@media (max-width: 1200px) {
+  .banner h1 {
+    font-size: 3.2rem;
+  }
+  
+  .services-title {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .banner h1 {
+    font-size: 2.8rem;
+  }
+  
+  .subtitle {
+    font-size: 1.4rem;
+  }
+  
+  .services-grid {
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 40px;
+  }
+  
+  .services-title {
+    font-size: 2.7rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .banner {
+    height: auto;
+    min-height: auto;
+    padding: 120px 20px;
+    background-attachment: scroll;
+  }
+  
+  .banner-content {
+    padding: 40px 30px;
+  }
+  
+  .banner h1 {
+    font-size: 2.4rem;
+  }
+  
+  .subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .btn-primary, .btn-secondary {
+    padding: 16px 40px;
+    font-size: 1.1rem;
+  }
+  
+  .counters-section {
+    padding: 100px 0;
+    margin-top: 0px;
+  }
+  
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+  
+  .services-title {
+    font-size: 2.4rem;
+  }
+  
+  .services-subtitle {
+    font-size: 1.2rem;
+  }
+    .service-btn {
+    padding: 14px 20px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .banner h1 {
+    font-size: 2rem;
+  }
+  
+  .banner-buttons {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+  
+  .services-title {
+    font-size: 2rem;
+  }
+  
+  .service-card {
+    padding: 25px;
+  }
+  
+  .service-icon {
+    padding: 30px;
+    font-size: 2.5rem;
+  }
+  
+  .service-content {
+    padding: 30px;
+  }
+
+  /* Новые стили для исправления проблемы с текстом */
+  .service-features li {
+    padding-left: 35px;
+    padding-right: 15px;
+    white-space: normal;
+    word-break: break-word;
+    text-align: left;
+    margin-bottom: 12px;
+    font-size: 1rem;
+  }
+
+  .service-features li span {
+    display: inline-block;
+    width: calc(100% - 35px);
+  }
+
+  .service-content {
+    padding: 30px 25px !important;
+  }
+
+  .service-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+  }
+}
+
+/* Общие стили для всех кнопок */
+.btn-secondary,
+.service-btn {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transform: translateY(0);
+}
+
+/* При наведении: как у .btn-primary */
+.btn-secondary:hover,
+.service-btn:hover {
+  transform: translateY(-5px) scale(1.03);
+}
+
+/* Эффект блика */
+.btn-secondary::after,
+.service-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: 0.6s;
+}
+
+.btn-secondary:hover::after,
+.service-btn:hover::after {
+  left: 100%;
+}
